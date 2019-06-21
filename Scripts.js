@@ -1,5 +1,5 @@
 var inc = 0; //Used later on to check how many cards have been flipped over (increment)
-var firstCard, secondCard; 
+var firstCard, secondCard, timeout; 
 var onPause = false;
 var cardBack = "cardBack.png";
 
@@ -23,14 +23,19 @@ function shuffleCards(){
 }
 
 function check(elm){
-    if(!onPause && elm.visibility !== "hidden"){ //Make sure that the selected card isn't already taken away, or that two cards are not already being shown
+    if(!onPause && elm.style.visibility !== "hidden"){ //Make sure that the selected card isn't already taken away, or that two cards are not already being shown
         switch(inc % 2){
             case 0: //This means the first card has been selected - we need to flip the card and wait for the next selection
                 firstCard = elm;
                 break;
             case 1: //This means the second card has been selected - we need to flip the card and check if they are the same kind
                 secondCard = elm;
-                
+                if(firstCard.data-num === secondCard.data-num && firstCard !== secondCard){
+                    onPause = true;
+                    timeout = setTimeout(function(){
+                        onPause = false;
+                    },3000)
+                }
                 break;
         }
     }
