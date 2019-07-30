@@ -1,1 +1,40 @@
+body{
+	background-color: #842;
+}
+
+header{
+	color: #eee;
+	font-family: monospace;
+	font-size: 72px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+main div{
+	margin:auto;
+	width: 50%;
+}
+
+main div img{
+	height: 160px;
+	width:  93px;
+}
+div#gameOver{
+	display:none;
+}
+div#gameOver h1{
+	color: #aea;
+	font-family: monospace;
+	font-size: 48px;
+	text-align: center;
+}
+div#gameOver p{
+	color: #ccc;
+	font-family: monospace;
+	font-size: 16px;
+	text-align: center;
+}
+div#gameOver p span{
+	color: #ddd;
+}
 
