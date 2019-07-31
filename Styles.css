@@ -20,7 +20,8 @@ main div img{
 	width:  93px;
 }
 main div img:hover{
-	box-shadow: 4px 4px 8px;
+	height: 164px;
+	width: 97px;
 }
 div#gameOver{
 	display:none;
